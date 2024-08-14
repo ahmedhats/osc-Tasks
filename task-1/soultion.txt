@@ -1,0 +1,18 @@
+osc@osc:~$ mkdir ahmed
+osc@osc:~$ cd ahmed
+osc@osc:~/ahmed$ touch one.txt two.txt three.txt four.txt
+osc@osc:~/ahmed$ mkdir BAD
+osc@osc:~/ahmed$ cd BAD
+osc@osc:~/ahmed/BAD$ touch bad.txt
+osc@osc:~/ahmed/BAD$ cd ..
+osc@osc:~/ahmed$ mv one.txt /home/osc/Downloads/
+osc@osc:~/ahmed$ cd ..
+osc@osc:~$ cd Downloads
+osc@osc:~/Downloads$ cp one.txt copy.txt
+osc@osc:~/Downloads$ cd /home/osc/ahmed/
+osc@osc:~/ahmed$ nano two.txt 
+ahmed^x y
+osc@osc:~/ahmed$ echo "1-hello OSC 2-hello OSC 3-hello OSC 4-hello OSC 5-hello OSC 6-hello OSC 7-hello OSC 8-hello OSC">> three.txt
+sc@osc:~/ahmed$ mv three.txt hello.txt
+osc@osc:~/ahmed$ rm four.txt
+osc@osc:~/ahmed$ rm -r BAD
