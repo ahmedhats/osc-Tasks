@@ -1,0 +1,35 @@
+mkdir /home/osc/project_files
+cd project_files
+mkdir reports logs data
+cd reports
+touch report1.md report2.md 
+cd /home/osc/project_files/logs
+touch system.log error.log file1.pdf file2.pdf
+cd /home/osc/project_files/data
+touch data.csv info.txt
+nano /home/osc/project_files/reports/report1.md
+nano /home/osc/project_files/logs/system.log 
+nano /home/osc/project_files/data/data.csv
+cd /home/osc/project_files/logs
+tar -czvf logs_backup.tar *
+mv logs_backup.tar /home/osc/project_files
+cd /home/osc/project_files
+tar -xzvf logs_backup.tar -C logs
+find ~ -type f -name "*.md"
+find /home/osc/project_files -type f -name "*.log"
+find /home/osc/project_files -type f -name "file1.pdf"
+find /home/osc/project_files -type f -iname "*.pdf"
+find /home/osc/project_files/logs -type f
+ln -s /home/osc/project_files/data/data.csv /home/osc/project_files/link_data.csv
+cd ~/project_files
+echo "Modification test to see changes">>link_data.csv
+cat ~/project_files/data/data.csv 
+cat ~/project_files/link_data.csv
+rm ~/project_files/link_data.csv 
+echo "Summary Start" > ~/project_files/summary.txt
+date >> ~/project_files/summary.txt
+wc -l < ~/project_files/summary.txt | tee -a ~/project_files/summary.txt
+wc -w ~/project_files/reports/report1.md
+wc -c < ~/project_files/logs/system.log >> ~/project_files/summary.txt
+find ~/project_files | wc -l >> ~/project_files/summary.txt
+cat ~/project_files/summary.txt
